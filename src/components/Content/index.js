@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import Card from 'src/components/Card';
+import Card from "src/components/Card";
 
-import './style.scss';
+import "./style.scss";
 
 const Content = ({ title, text, recipes }) => (
   <section className="content">
@@ -24,7 +24,7 @@ Content.propTypes = {
   recipes: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-    }),
+    })
   ),
 };
 
