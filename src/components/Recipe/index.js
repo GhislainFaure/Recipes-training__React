@@ -2,7 +2,7 @@
 // == Import : npm
 import { Navigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-
+import { useEffect } from "react";
 import { findRecipe } from "src/selectors/recipes";
 
 // == Import : local
@@ -21,6 +21,10 @@ function Recipe() {
   const { slug } = useParams();
   console.log(slug);
   const recipe = useSelector((state) => findRecipe(state.recipes.list, slug));
+
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, [recipe]);
 
   if (!recipe) {
     return <Navigate to="/error" replace={true} />;
